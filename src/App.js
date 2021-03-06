@@ -1,13 +1,22 @@
 import React from 'react'
-import Header from "./components/Header";
+import {Layout} from "antd";
+import BlockHeader from "./components/Header";
+import BlockContent from "./components/Content";
+import BlockFooter from "./components/Footer";
+import {BrowserRouter as Router} from "react-router-dom";
 
 
 function App() {
 
     return (
-        <div className="App">
-            <Header/>
-        </div>
+
+        <Layout className="App" style={{padding: '0 24px 24px'}}>
+            <Router>
+                <BlockHeader/>
+                <BlockContent/>
+                <BlockFooter/>
+            </Router>
+        </Layout>
     );
 }
 
