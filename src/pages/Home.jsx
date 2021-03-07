@@ -26,6 +26,7 @@ const Home = () => {
                 <Row>
                     {
                         posts.posts.map((post) => {
+                            post.time = new Date().toLocaleDateString()
                             return (
                                 <Col lg={12} className='post-main__block' key={post.id}>
                                     <Row>
@@ -36,6 +37,7 @@ const Home = () => {
                                     <Row>
                                         <Col lg={12}>
                                             <Text>{post.body}</Text>
+                                            <div className="mt-2"><strong>{post.time}</strong></div>
                                         </Col>
                                     </Row>
                                 </Col>
