@@ -1,35 +1,34 @@
 import React from 'react'
 import {Header} from "antd/lib/layout/layout";
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import {UserOutlined, LaptopOutlined, NotificationOutlined} from '@ant-design/icons';
 import Menu from "antd/lib/menu";
 import {Link} from "react-router-dom";
 import {homeUrl, postsUrl, usersUrl} from "../layout/URL";
+import {Container, Row, Col} from "react-bootstrap";
 
 
-
-
-const BlockHeader = ()=>{
-    return(
-        <Header className="header">
-            <div className="logo" />
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-                <Menu.Item key="1" icon={<UserOutlined />}>
-                    <Link to={homeUrl}>
-                        Home
-                    </Link>
-                </Menu.Item>
-                <Menu.Item key="2" icon={<LaptopOutlined />}>
-                    <Link to={postsUrl}>
-                        Posts
-                    </Link>
-                </Menu.Item>
-                <Menu.Item key="3" icon={<NotificationOutlined />}>
-                    <Link to={usersUrl}>
-                        Users
-                    </Link>
-                </Menu.Item>
-            </Menu>
-        </Header>
+const BlockHeader = () => {
+    return (
+        <header id="header">
+            <Container>
+                <Row>
+                    <Col lg={12}>
+                        <div className="header-inner">
+                            <div className="logo">
+                                <img src="/assets/images/logo.png" alt=""/>
+                            </div>
+                            <div className="nav">
+                                <ul>
+                                    <li><Link to={homeUrl}>Home</Link></li>
+                                    <li><Link to={postsUrl}>Posts</Link></li>
+                                    <li><Link to={usersUrl}>Users</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </header>
     )
 }
 

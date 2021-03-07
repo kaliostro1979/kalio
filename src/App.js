@@ -10,7 +10,7 @@ function App() {
 
     return (
 
-        <Layout className="App" style={{padding: '0 24px 24px'}}>
+        <Layout className="App">
             <Router>
                 <BlockHeader/>
                 <BlockContent/>

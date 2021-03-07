@@ -70,5 +70,31 @@ img{
   overflow-y: auto;
 }
 
+#header{
+  padding: 15px 100px;
+  background-color: #001529;
+  width: 100vw;
+}
 
+.header-inner{
+  display: flex;
+  align-items: baseline;
+}
+
+.logo{
+  width: 50px;
+}
+
+.nav ul{
+  list-style: none;
+  display: flex;
+}
+
+.nav ul li{
+  margin-right: 20px;
+}
+
+.nav ul li a{
+  color: #ffffff;
+}
 
