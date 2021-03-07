@@ -15,7 +15,7 @@ const BlockHeader = () => {
                     <Col lg={12}>
                         <div className="header-inner">
                             <div className="logo">
-                                <img src="/assets/images/logo.png" alt=""/>
+                                <Link to={homeUrl}><img src="/assets/images/logo.png" alt=""/></Link>
                             </div>
                             <div className="nav">
                                 <ul>
