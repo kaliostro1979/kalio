@@ -2,9 +2,10 @@ import React, {useEffect, useState} from 'react'
 import {Row, Col} from "react-bootstrap";
 import Card from "antd/lib/card";
 import {useDispatch, useSelector} from "react-redux";
-import {loadSingleUser, loadUsers} from "../redux";
 import {Link} from "react-router-dom";
 import {usersUrl} from "../layout/URL";
+import {loadSingleUser} from "../redux/actions/getUserProfile";
+import {loadUsers} from "../redux/actions/getUsers";
 
 
 

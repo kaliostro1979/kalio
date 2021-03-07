@@ -7,7 +7,9 @@ const initialState = {
 export const userPostsReducer = (state = initialState, action)=>{
     switch (action.type){
         case GET_USER_POSTS:
-            return {...state, userPosts: action.payload}
+            return {...state,
+                userPosts: action.payload
+            }
         default:
             return state
     }

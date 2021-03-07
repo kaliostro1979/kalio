@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 import Card from "antd/lib/card";
 import Text from "antd/lib/typography/Text";
 import {useDispatch, useSelector} from "react-redux";
-import {loadUserPosts} from "../redux";
+import {loadUserPosts} from "../redux/actions/getUserPosts";
+
 
 
 const ProfilePage = () => {
@@ -16,7 +17,8 @@ const ProfilePage = () => {
 
     useEffect(() => {
         dispatcher(loadUserPosts(profile.id))
-    }, [])
+    }, [profile])
+
 
     return (
         <>
@@ -52,7 +54,7 @@ const ProfilePage = () => {
                             {
                                 userPosts.userPosts.map((post)=>{
                                     return (
-                                        <Row key={post.id} className="post-main__block">
+                                        <Row className="post-main__block" key={'postTitle' + post.id}>
                                             <Col lg={12}>
                                                 <h5>{post.title}</h5>
                                             </Col>

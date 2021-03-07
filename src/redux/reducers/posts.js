@@ -1,16 +1,14 @@
 import {GET_POSTS} from "../types";
 
 const initialState = {
-    posts: [],
-    isFetching: false
+    posts: []
 }
 
 export const postReducer = (state= initialState, action)=>{
     switch (action.type){
         case GET_POSTS:
             return {...state,
-                posts: action.payload,
-                isFetching: action.load
+                posts: action.payload
             }
         default:
             return state
