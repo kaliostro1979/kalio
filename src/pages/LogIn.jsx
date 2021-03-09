@@ -40,7 +40,7 @@ const LogInPage = ({history})=>{
             .then((user)=>{
                 dispatch(getCurrentUser(user))
             })
-            //.then(history.push(postsUrl))
+            .then(history.push(postsUrl))
     }
 
 
