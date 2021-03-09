@@ -9,6 +9,6 @@ export const reducers = combineReducers({
     posts: postReducer,
     users: usersReducer,
     profile: profileReducer,
-    userPosts: userPostsReducer
+    userPosts: userPostsReducer,
 })
 

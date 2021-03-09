@@ -1,5 +1,4 @@
 import {GET_USER_PROFILE} from "../types";
-import {act} from "@testing-library/react";
 
 
 const initialState = {

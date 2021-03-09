@@ -10,6 +10,10 @@ body{
   background-color: #f0f2f5!important;
 }
 
+body a:hover{
+  text-decoration: none;
+}
+
 img{
   width: 100%;
 }
@@ -80,25 +84,65 @@ img{
   width: 100vw;
 }
 
-.header-inner{
+.header-inner, .nav-block{
   display: flex;
   align-items: baseline;
+}
+
+.header-inner{
+  justify-content: space-between;
 }
 
 .logo{
   width: 50px;
 }
 
-.nav ul{
+.nav ul, .user-control__block ul{
   list-style: none;
   display: flex;
 }
 
-.nav ul li{
+.nav ul li, .user-control__block ul li{
   margin-right: 20px;
 }
 
-.nav ul li a{
+.nav ul li a, .user-control__block ul li a{
   color: #ffffff;
 }
+
+.lang-switcher__btn{
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.user-name{
+  color: green;
+  font-size: 20px;
+}
+
+.user-name span{
+  font-size: 16px;
+}
+
+.users-card__main .ant-card-head-title{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.lang-switcher ul li{
+  position: relative;
+  margin-right: 50px;
+}
+
+.lang-switcher ul li:last-child{
+  margin-right: 0;
+}
+
+.lang-switcher ul li .lang-icon{
+  width: 15px;
+  position: absolute;
+  right: 23px;
+  top: 0;
+}
+
 

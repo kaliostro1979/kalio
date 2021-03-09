@@ -1,24 +1,26 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {Row, Col} from 'react-bootstrap'
 import {useDispatch, useSelector} from "react-redux";
 import Text from "antd/lib/typography/Text";
 import {loadPosts} from "../redux/actions/getPosts";
+import {useTranslation} from "react-i18next";
 
 
 const Posts = () => {
 
     const posts = useSelector((state) => state.posts)
     const dispatch = useDispatch()
+    const {t} = useTranslation()
 
     useEffect(() => {
         dispatch(loadPosts())
-    }, [])
+    }, [dispatch])
 
     return (
         <Row>
             <Col lg={12}>
                 <div className="all-posts__block text-center mb-3">
-                    <h3>All Posts</h3>
+                    <h3>{t('All Posts')}</h3>
                 </div>
             </Col>
             <Col lg={12} className="posts__block">

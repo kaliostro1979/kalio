@@ -1,13 +1,16 @@
 import React from 'react'
 import BreadCrumbs from "./BreadCrumbs";
 import Posts from "../pages/Posts";
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import Users from "../pages/Users";
 import {Container, Row, Col} from "react-bootstrap";
 import BlockSidebar from "./Sidebar";
 import ProfilePage from "../pages/ProfilePage";
-import {homeUrl, postsUrl, profileUrl, usersUrl} from "../layout/URL";
+import {addPostUrl, homeUrl, loginUrl, postsUrl, profileUrl, registerUrl, usersUrl} from "../layout/URL";
 import Home from "../pages/Home";
+import LogInPage from "../pages/LogIn";
+import RegisterPage from "../pages/Register";
+import AddPostPage from "../pages/AddPost";
 
 
 const BlockContent = () => {
@@ -27,6 +30,9 @@ const BlockContent = () => {
                     <Route exact path={postsUrl} component={Posts}/>
                     <Route exact path={usersUrl} component={Users}/>
                     <Route exact path={profileUrl} component={ProfilePage}/>
+                    <Route exact path={loginUrl} component={LogInPage}/>
+                    <Route exact path={registerUrl} component={RegisterPage}/>
+                    <Route exact path={addPostUrl} component={AddPostPage}/>
                 </Col>
             </Row>
         </Container>
