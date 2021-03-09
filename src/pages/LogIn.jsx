@@ -1,13 +1,17 @@
 import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import {useTranslation} from "react-i18next";
-import axios from "axios";
+import {postsUrl} from "../layout/URL";
+import {getCurrentUser} from "../redux/actions/getCurrentUser";
+import {useDispatch, useSelector} from "react-redux";
 
-const LogInPage = ()=>{
+const LogInPage = ({history})=>{
 
     const {t} = useTranslation()
     const[email, setEmail] = useState()
     const[password, setPassword] = useState()
+    const[currentUser, setCurrentUser] = useState({})
+    const dispatch = useDispatch()
 
     function handleEmail(event){
         setEmail(event.target.value)
@@ -24,8 +28,21 @@ const LogInPage = ()=>{
 
     async function handleSubmit(event){
         event.preventDefault()
-        await axios.post('http://localhost:5000/auth/login', data)
+        const currentUser = await fetch('http://localhost:5000/auth/login', {
+            method: 'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res=>res.json())
+            .then((user)=>{
+                dispatch(getCurrentUser(user))
+            })
+            //.then(history.push(postsUrl))
     }
+
 
     return(
         <Form onSubmit={handleSubmit}>

@@ -14,5 +14,9 @@
   "Website": "Веб страница",
   "Company": "Организация",
   "Phone": "Телефон",
-  "Username": "Имя пользователя"
+  "Username": "Имя пользователя",
+  "First Name": "Имя",
+  "Last Name": "Фамилия",
+  "Enter first name": "Введите имя",
+  "Enter last name": "Введите фамилия"
 }

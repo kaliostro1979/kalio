@@ -3,6 +3,7 @@ import {postReducer} from "./posts";
 import {usersReducer} from "./users";
 import {profileReducer} from "./profile";
 import {userPostsReducer} from "./userPosts";
+import {currentUser} from "./currentUser";
 
 
 export const reducers = combineReducers({
@@ -10,5 +11,6 @@ export const reducers = combineReducers({
     users: usersReducer,
     profile: profileReducer,
     userPosts: userPostsReducer,
+    currentUser: currentUser
 })
 
