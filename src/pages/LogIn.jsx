@@ -10,7 +10,6 @@ const LogInPage = ({history})=>{
     const {t} = useTranslation()
     const[email, setEmail] = useState()
     const[password, setPassword] = useState()
-    const[currentUser, setCurrentUser] = useState({})
     const dispatch = useDispatch()
 
     function handleEmail(event){

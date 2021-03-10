@@ -3,13 +3,11 @@ import {Container, Row, Col} from "react-bootstrap";
 import NavBlock from "./NavBlock";
 import UserControl from "./UserControl";
 import {useSelector} from "react-redux";
-import {useTranslation} from "react-i18next";
-import LoggedInUserControl from "./loggedInUserCOntrol";
+import LoggedInUserControl from "./LoggedInUserControl";
 
 
 const BlockHeader = () => {
     const user = useSelector((state)=>state.currentUser)
-    const {t} = useTranslation()
 
 
     if (user !== null){
