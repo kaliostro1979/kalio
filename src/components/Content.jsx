@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import BreadCrumbs from "./BreadCrumbs";
 import Posts from "../pages/Posts";
-import {Route} from "react-router-dom";
+import {Route, useHistory} from "react-router-dom";
 import Users from "../pages/Users";
 import {Container, Row, Col} from "react-bootstrap";
 import BlockSidebar from "./Sidebar";
@@ -11,9 +11,25 @@ import Home from "../pages/Home";
 import LogInPage from "../pages/LogIn";
 import RegisterPage from "../pages/Register";
 import AddPostPage from "../pages/AddPost";
+import {useSelector} from "react-redux";
 
 
 const BlockContent = () => {
+
+    const user = useSelector((state)=>state.currentUser)
+    const history = useHistory()
+
+    useEffect(()=>{
+        checkUser()
+    }, [user])
+
+    const checkUser = ()=>{
+        if (user === null){
+            history.push(loginUrl)
+        }
+    }
+
+
     return (
         <Container>
             <Row>

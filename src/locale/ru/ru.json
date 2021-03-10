@@ -18,5 +18,6 @@
   "First Name": "Имя",
   "Last Name": "Фамилия",
   "Enter first name": "Введите имя",
-  "Enter last name": "Введите фамилия"
+  "Enter last name": "Введите фамилия",
+  "Logout": "Выйти"
 }

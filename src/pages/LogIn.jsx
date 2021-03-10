@@ -3,7 +3,7 @@ import {Form, Button} from 'react-bootstrap'
 import {useTranslation} from "react-i18next";
 import {postsUrl} from "../layout/URL";
 import {getCurrentUser} from "../redux/actions/getCurrentUser";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 const LogInPage = ({history})=>{
 
@@ -27,7 +27,7 @@ const LogInPage = ({history})=>{
 
     async function handleSubmit(event){
         event.preventDefault()
-        const currentUser = await fetch('http://localhost:5000/auth/login', {
+        await fetch('http://localhost:5000/auth/login', {
             method: 'POST',
             headers:{
                 'Accept': 'application/json',
