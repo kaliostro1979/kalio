@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import BreadCrumbs from "./BreadCrumbs";
 import Posts from "../pages/Posts";
 import {Route, useHistory} from "react-router-dom";
@@ -19,15 +19,27 @@ const BlockContent = () => {
     const user = useSelector((state)=>state.currentUser)
     const history = useHistory()
 
-    useEffect(()=>{
-        checkUser()
-    }, [user])
+    const [loggedIn, setLoggedIn] = useState(undefined)
 
-    const checkUser = ()=>{
-        if (user === null){
-            history.push(loginUrl)
-        }
+    async function getLoggedIn(){
+        const loggedInRes = await fetch('http://localhost:5000/auth/loggedIn', {
+            method: 'GET',
+            credentials: 'include'
+        })
+            .then(res=>{
+                return res.json()
+            })
+            .then((data)=>{
+                return data
+            })
+        console.log(loggedInRes);
+        setLoggedIn(loggedInRes)
     }
+
+    useEffect(()=>{
+        getLoggedIn()
+    }, [])
+
 
 
     return (

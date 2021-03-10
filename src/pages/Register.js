@@ -50,8 +50,7 @@ const RegisterPage = ({history})=>{
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                credentials: "same-origin",
-                "Access-Control-Allow-Credentials": true,
+                credentials: 'include',
                 body: JSON.stringify(data)
             }
 

@@ -33,6 +33,7 @@ const LogInPage = ({history})=>{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
+            credentials: 'include',
             body: JSON.stringify(data)
         })
             .then(res=>res.json())
