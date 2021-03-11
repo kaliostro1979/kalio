@@ -2,7 +2,7 @@ import React from 'react'
 import Sider from "antd/lib/layout/Sider";
 import Menu from "antd/lib/menu";
 import {Link} from "react-router-dom";
-import {homeUrl, postsUrl, usersUrl} from "../layout/URL";
+import {addPostUrl, homeUrl, postsUrl, usersUrl} from "../layout/URL";
 import {useTranslation} from "react-i18next";
 
 
@@ -21,6 +21,7 @@ const BlockSidebar = ()=>{
                 <Menu.Item key="1"><Link to={homeUrl}>{t('Home')}</Link></Menu.Item>
                 <Menu.Item key="2"><Link to={postsUrl}>{t('Posts')}</Link></Menu.Item>
                 <Menu.Item key="3"><Link to={usersUrl}>{t('Users')}</Link></Menu.Item>
+                <Menu.Item key="4"><Link to={addPostUrl}>{t('Add new Post')}</Link></Menu.Item>
             </Menu>
         </Sider>
     )

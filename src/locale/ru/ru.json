@@ -19,5 +19,6 @@
   "Last Name": "Фамилия",
   "Enter first name": "Введите имя",
   "Enter last name": "Введите фамилия",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+  "Add new Post": "Добавить публикацию"
 }

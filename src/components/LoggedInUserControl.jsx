@@ -4,9 +4,11 @@ import {useTranslation} from "react-i18next";
 import {useDispatch} from "react-redux";
 import {logOut} from "../redux/actions/setLogout";
 import {Context} from "../context/context";
+import {loginUrl} from "../layout/URL";
+import {getCurrentUser} from "../redux/actions/getCurrentUser";
 
 
-const LoggedInUserControl = ()=>{
+const LoggedInUserControl = ({history})=>{
     const dispatch = useDispatch()
     const {t} = useTranslation()
     const {token, currentUser, setToken} = useContext(Context)
@@ -17,6 +19,8 @@ const LoggedInUserControl = ()=>{
         dispatch(logOut())
         localStorage.clear()
         setToken('')
+        dispatch(getCurrentUser(null))
+        //history.push(loginUrl)
     }
 
     if (token){
