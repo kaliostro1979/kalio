@@ -1,17 +1,17 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Container, Row, Col} from "react-bootstrap";
 import NavBlock from "./NavBlock";
 import UserControl from "./UserControl";
-import {useSelector} from "react-redux";
 import LoggedInUserControl from "./LoggedInUserControl";
+import {Context} from "../context/context";
 
 
 
 const BlockHeader = () => {
-    const user = useSelector((state)=>state.currentUser)
+    const {token} = useContext(Context)
 
 
-    if (user !== null){
+    if (token){
         return (
             <header id="header">
                 <Container>

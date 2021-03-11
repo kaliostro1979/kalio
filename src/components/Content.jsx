@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext} from 'react'
 import BreadCrumbs from "./BreadCrumbs";
 import Posts from "../pages/Posts";
-import {Route, useHistory} from "react-router-dom";
+import {Route} from "react-router-dom";
 import Users from "../pages/Users";
 import {Container, Row, Col} from "react-bootstrap";
 import BlockSidebar from "./Sidebar";
@@ -11,35 +11,12 @@ import Home from "../pages/Home";
 import LogInPage from "../pages/LogIn";
 import RegisterPage from "../pages/Register";
 import AddPostPage from "../pages/AddPost";
-import {useSelector} from "react-redux";
+import {Context} from "../context/context";
 
 
 const BlockContent = () => {
 
-    const user = useSelector((state)=>state.currentUser)
-    const history = useHistory()
-
-    const [loggedIn, setLoggedIn] = useState(undefined)
-
-    async function getLoggedIn(){
-        const loggedInRes = await fetch('http://localhost:5000/auth/loggedIn', {
-            method: 'GET',
-            credentials: 'include'
-        })
-            .then(res=>{
-                return res.json()
-            })
-            .then((data)=>{
-                return data
-            })
-        console.log(loggedInRes);
-        setLoggedIn(loggedInRes)
-    }
-
-    useEffect(()=>{
-        getLoggedIn()
-    }, [])
-
+    const {token} = useContext(Context)
 
 
     return (
@@ -55,12 +32,12 @@ const BlockContent = () => {
                 </Col>
                 <Col lg={8}>
                     <Route exact path={homeUrl} component={Home}/>
-                    <Route exact path={postsUrl} component={Posts}/>
-                    <Route exact path={usersUrl} component={Users}/>
-                    <Route exact path={profileUrl} component={ProfilePage}/>
+                    <Route exact path={postsUrl} component={token ? Posts : LogInPage}/>
+                    <Route exact path={usersUrl} component={token ? Users : LogInPage }/>
+                    <Route exact path={profileUrl} component={token ? ProfilePage : LogInPage }/>
+                    <Route exact path={addPostUrl} component={token ? AddPostPage : LogInPage}/>
                     <Route exact path={loginUrl} component={LogInPage}/>
                     <Route exact path={registerUrl} component={RegisterPage}/>
-                    <Route exact path={addPostUrl} component={AddPostPage}/>
                 </Col>
             </Row>
         </Container>

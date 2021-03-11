@@ -1,20 +1,25 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import LanguageSwitcher from "./LangSwitcher";
 import {useTranslation} from "react-i18next";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {logOut} from "../redux/actions/setLogout";
+import {Context} from "../context/context";
 
 
 const LoggedInUserControl = ()=>{
-    const user = useSelector((state)=>state.currentUser)
     const dispatch = useDispatch()
     const {t} = useTranslation()
+    const {token, currentUser, setToken} = useContext(Context)
+    const user = JSON.parse(currentUser)
+
 
     async function handleLogOut(){
         dispatch(logOut())
+        localStorage.clear()
+        setToken('')
     }
 
-    if (user !== null){
+    if (token){
         return(
             <div className="user-control__block">
                 <ul>
