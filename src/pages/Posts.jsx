@@ -29,7 +29,7 @@ const Posts = () => {
                         posts.posts.map((post) => {
                             post.time = new Date().toLocaleDateString()
                             return (
-                                <Col lg={12} className='post-main__block' key={post.id}>
+                                <Col lg={12} className='post-main__block' key={Math.random()}>
                                     <Row>
                                         <Col lg={12}>
                                             <h5>{post.title}</h5>
@@ -38,7 +38,8 @@ const Posts = () => {
                                     <Row>
                                         <Col lg={12}>
                                             <Text>{post.body}</Text>
-                                            <div className="mt-2 text-right"><strong>{post.time}</strong></div>
+                                            <div className="mt-2 text-left"><strong>{post.author}</strong></div>
+                                            <div className="mt-2 text-right"><strong>{post.date}</strong></div>
                                         </Col>
                                     </Row>
                                 </Col>

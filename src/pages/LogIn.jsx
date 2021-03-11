@@ -48,12 +48,12 @@ const LogInPage = ({history})=>{
         <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>{t('Email address')}</Form.Label>
-                <Form.Control type="email" placeholder={t('Enter email')} onChange={handleEmail}/>
+                <Form.Control type="email" placeholder={t('Enter email')} onChange={handleEmail} required/>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
                 <Form.Label>{t('Password')}</Form.Label>
-                <Form.Control type="password" placeholder={t('Password')} onChange={handlePassword}/>
+                <Form.Control type="password" placeholder={t('Password')} onChange={handlePassword} required/>
             </Form.Group>
             <Button variant="primary" type="submit">
                 {t('Login')}

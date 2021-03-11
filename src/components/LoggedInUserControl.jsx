@@ -20,7 +20,6 @@ const LoggedInUserControl = ({history})=>{
         localStorage.clear()
         setToken('')
         dispatch(getCurrentUser(null))
-        //history.push(loginUrl)
     }
 
     if (token){

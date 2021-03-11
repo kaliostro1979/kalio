@@ -20,5 +20,7 @@
   "Enter first name": "Введите имя",
   "Enter last name": "Введите фамилия",
   "Logout": "Выйти",
-  "Add new Post": "Добавить публикацию"
+  "Add new Post": "Добавить публикацию",
+  "Post title": "Заголовок публикации",
+  "Post message": "Сообщение"
 }

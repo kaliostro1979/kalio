@@ -19,7 +19,7 @@ const Users = () => {
 
     useEffect(() => {
         dispatcher(loadUsers(users.users))
-    }, [dispatcher, users.users])
+    }, [dispatcher])
 
 
     return (
@@ -31,20 +31,21 @@ const Users = () => {
                 <Row>
                     {
                         users.users.map((user) => {
+                            console.log(user);
                             return (
-                                <Col lg={6} className="user-block mb-3" key={user.id}>
-                                    <Link to={usersUrl + '/' + user.id} onClick={()=>{dispatcher(loadSingleUser(user.id))}}>
-                                        <Card title={user.name} className="users-card__main">
-                                            <div className="user-data mb-2 user-name"><span>{t('Username')}:</span> {user.username}</div>
+                                <Col lg={6} className="user-block mb-3" key={user._id}>
+                                    <Link to={usersUrl + '/' + user._id} onClick={()=>{dispatcher(loadSingleUser(user.id))}}>
+                                        <Card title={user.firstName} className="users-card__main">
+                                            {/*<div className="user-data mb-2 user-name"><span>{t('Username')}:</span> {user.username}</div>*/}
                                             <div className="user-data mb-2 user-email">{t('Email')}: <span>{user.email}</span>
                                             </div>
                                             <div className="user-data mb-2 user-phone">{t('Phone')}: <span>{user.phone}</span>
                                             </div>
-                                            <div className="user-data mb-2 user-web">{t('Website')}: <span>{user.website}</span>
-                                            </div>
-                                            <div
+                                            {/*<div className="user-data mb-2 user-web">{t('Website')}: <span>{user.website}</span>
+                                            </div>*/}
+                                            {/*<div
                                                 className="user-data mb-2 user-company">{t('Company')}: <span>{user.company.name}</span>
-                                            </div>
+                                            </div>*/}
                                         </Card>
                                     </Link>
                                 </Col>

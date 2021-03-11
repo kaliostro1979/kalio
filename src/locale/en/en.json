@@ -20,6 +20,8 @@
   "Enter first name": "Enter first name",
   "Enter last name": "Enter last name",
   "Logout": "Logout",
-  "Add new Post": "Add new Post"
+  "Add new Post": "Add new Post",
+  "Post title": "Post title",
+  "Post message": "Post message"
 
 }
