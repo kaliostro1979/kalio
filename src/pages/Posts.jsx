@@ -38,8 +38,10 @@ const Posts = () => {
                                     <Row>
                                         <Col lg={12}>
                                             <Text>{post.body}</Text>
-                                            <div className="mt-2 text-left"><strong>{post.author}</strong></div>
-                                            <div className="mt-2 text-right"><strong>{post.date}</strong></div>
+                                            <div className="author-info__block">
+                                                <div className="mt-2 text-left">Author: <strong>{post.author}</strong></div>
+                                                <div className="mt-2 text-right">Date: <strong>{post.date}</strong></div>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </Col>
