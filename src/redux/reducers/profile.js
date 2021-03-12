@@ -3,12 +3,10 @@ import {GET_USER_PROFILE} from "../types";
 
 const initialState = {
     id: '',
-    name: '',
+    firstName: '',
+    lastName: '',
     username: '',
     email: '',
-    phone: '',
-    company: '',
-    website: ''
 }
 
 export const profileReducer = (state = initialState, action)=>{
@@ -16,12 +14,10 @@ export const profileReducer = (state = initialState, action)=>{
         case GET_USER_PROFILE:
             return {...state,
                 id: action.payload._id,
-                name: action.payload.name,
+                firstName: action.payload.firstName,
+                lastName: action.payload.lastName,
                 username: action.payload.username,
                 email: action.payload.email,
-                phone: action.payload.phone,
-                company: action.payload.company,
-                website: action.payload.website
             }
         default:
             return state

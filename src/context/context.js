@@ -9,14 +9,10 @@ function ContextProvider ({children}){
     const [token, setToken] = useState('')
     const [currentUser, setCurrentUser] = useState('')
 
-    console.log('user ------ ', user);
-
     if (user !== null){
         localStorage.setItem('token', user.token)
         localStorage.setItem('currentUser', JSON.stringify(user))
     }
-
-
 
 
     useEffect(()=>{
@@ -26,7 +22,6 @@ function ContextProvider ({children}){
         setToken(storageToken)
     },[user, token])
 
-    console.log('token ----- ', token);
 
 
     return(

@@ -22,6 +22,7 @@ const ProfilePage = () => {
         dispatcher(loadUserPosts(profile.id))
     }, [dispatcher, profile.id])
 
+    console.log(profile);
 
     return (
         <>
@@ -32,17 +33,11 @@ const ProfilePage = () => {
                     </div>
                 </Col>
                 <Col lg={8}>
-                    <Card title={profile.firstName} className="profile-card">
-                        <div className="user-data mb-2 user-name profile-username">{profile.firstName}</div>
+                    <Card title={profile.firstName + ' ' + profile.lastName} className="profile-card">
                         <div className="user-data mb-2 user-email">{t('Email')}: <span>{profile.email}</span>
                         </div>
                         <div className="user-data mb-2 user-phone">{t('Phone')}: <span>{profile.phone}</span>
                         </div>
-                        {/*<div className="user-data mb-2 user-web">{t('Website')}: <Link to={profile.website} target="_blank">{profile.website}</Link>
-                        </div>
-                        <div
-                            className="user-data mb-2 user-company">{t('Company')}: <span>{profile.company.name}</span>
-                        </div>*/}
                     </Card>
                 </Col>
 
