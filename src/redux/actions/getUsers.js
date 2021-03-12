@@ -3,7 +3,7 @@ import {GET_USERS} from "../types";
 
 export const loadUsers = ()=>{
     return async (dispatch)=>{
-        const users = await fetch('http://localhost:5000/auth',{
+        const users = await fetch('http://localhost:5000/users',{
             method: 'GET',
             credentials: 'include'
         })

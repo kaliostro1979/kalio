@@ -15,7 +15,7 @@ export const profileReducer = (state = initialState, action)=>{
     switch (action.type){
         case GET_USER_PROFILE:
             return {...state,
-                id: action.payload.id,
+                id: action.payload._id,
                 name: action.payload.name,
                 username: action.payload.username,
                 email: action.payload.email,

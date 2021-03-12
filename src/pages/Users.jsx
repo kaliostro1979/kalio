@@ -34,7 +34,7 @@ const Users = () => {
                             console.log(user);
                             return (
                                 <Col lg={6} className="user-block mb-3" key={user._id}>
-                                    <Link to={usersUrl + '/' + user._id} onClick={()=>{dispatcher(loadSingleUser(user.id))}}>
+                                    <Link to={usersUrl + '/' + user._id} onClick={()=>{dispatcher(loadSingleUser(user._id))}}>
                                         <Card title={user.firstName} className="users-card__main">
                                             {/*<div className="user-data mb-2 user-name"><span>{t('Username')}:</span> {user.username}</div>*/}
                                             <div className="user-data mb-2 user-email">{t('Email')}: <span>{user.email}</span>
